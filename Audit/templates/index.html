@@ -6,10 +6,8 @@
 <body>
     <h1>VulnNote Dashboard</h1>
     
-    <!-- SECURITY FLAW 28: DOM-based XSS -->
     <div id="search-result">
         <script>
-            // VULNERABLE: Direct DOM injection without sanitization
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search') || '';
             if (searchQuery) {
@@ -18,14 +16,12 @@
         </script>
     </div>
     
-    <!-- SECURITY FLAW 29: Insecure form without CSRF protection -->
     <form action="/notes/create" method="POST">
         <input type="text" name="title" placeholder="Note title">
         <textarea name="content" placeholder="Note content"></textarea>
         <button type="submit">Create Note</button>
     </form>
     
-    <!-- SECURITY FLAW 30: Insecure external script -->
     <script src="http://insecure-cdn.example.com/jquery.min.js"></script>
 </body>
 </html>
