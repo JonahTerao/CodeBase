@@ -1,0 +1,33 @@
+C:\Users\jonah\OneDrive\Documents\GitHub\CodeBase\Audit>cd Audit
+The system cannot find the path specified.
+
+C:\Users\jonah\OneDrive\Documents\GitHub\CodeBase\Audit>python control/analyze_bandit.py
+=== BANDIT RESULTS ANALYSIS ===
+
+Bandit found 18 security issues:
+
+HIGH Severity (3):
+  1. .\auth.py:9 - Use of weak MD5 hash for security. Consider usedforsecurity=False
+  2. .\auth.py:34 - Use of weak MD5 hash for security. Consider usedforsecurity=False
+  3. .\fix_passwords.py:7 - Use of weak MD5 hash for security. Consider usedforsecurity=False
+
+MEDIUM Severity (5):
+  1. .\app.py:25 - Possible SQL injection vector through string-based query construction.
+  2. .\app.py:154 - Possible binding to all interfaces.
+  3. .\control\run_control_tests.py:42 - Call to requests without timeout
+  4. .\control\run_control_tests.py:44 - Call to requests without timeout
+  5. .\database.py:48 - Possible SQL injection vector through string-based query construction.
+
+LOW Severity (10):
+  1. .\config.py:2 - Possible hardcoded password: 'super_secret_key_12345_change_in_production!'
+  2. .\config.py:4 - Possible hardcoded password: 'password123'
+  3. .\control\control_test_suite.py:4 - Consider possible security implications associated with the subprocess module.
+  4. .\control\control_test_suite.py:39 - subprocess call - check for execution of untrusted input.
+  5. .\control\control_test_suite.py:121 - Try, Except, Continue detected.
+  ... and 5 more
+
+
+=== METRICS ===
+Confidence High: 11
+Confidence Medium: 3
+Confidence Low: 4
