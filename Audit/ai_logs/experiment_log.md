@@ -33,3 +33,50 @@
 - AI needs all related files to find all vulnerabilities
 - Component analysis required for comprehensive audit
 - Good at pattern recognition (SQLi, XSS, path traversal)
+
+
+# Experiment 2: DeepSeek Full Auth.py Audit
+Findings Summary:
+Total issues found: 7
+
+True Positives (matches our VULN-XX): 3/3 (100%)
+
+False Positives: 0 (all findings are valid security issues)
+
+False Negatives: 0 (found all expected vulnerabilities)
+
+Additional findings: 4 (beyond our seeded vulnerabilities)
+
+Expected vs Found:
+Expected VULN	Found?	AI Finding	Notes
+VULN-10 (Weak MD5)	✓	Finding 1	Correctly identified as Critical
+VULN-13 (Timing attack)	✓	Finding 2	Correctly identified as Critical
+VULN-14 (Weak tokens)	✓	Finding 3	Correctly identified as High
+Additional Findings:
+Finding 4: Lack of input validation (High) - Valid
+
+Finding 5: Import inside function (Medium) - Valid code quality issue
+
+Finding 6: Information disclosure (Medium) - Valid
+
+Finding 7: Missing logging (Low) - Valid
+
+Key Observations:
+Strengths: Excellent at cryptographic analysis, detailed fixes provided, understands timing attacks
+
+Weaknesses: None observed for this module
+
+Hallucinations: None - all findings are accurate
+
+Fix Quality: High - provides complete, production-ready code
+
+Severity Assessment: Accurate - correctly prioritized cryptographic issues as Critical
+
+DeepSeek Performance Score: 10/10
+Found all seeded vulnerabilities (100% recall)
+
+No false positives (100% precision)
+
+Provided detailed, correct fixes
+
+Additional findings were valid security concerns
