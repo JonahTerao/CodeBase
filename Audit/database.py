@@ -25,7 +25,6 @@ def init_db():
         )
     ''')
     
-    # SECURITY FLAW 6: Hardcoded admin credentials in database initialization
     try:
         cursor.execute("INSERT INTO users (username, password, is_admin) VALUES ('admin', 'admin123', 1)")
         cursor.execute("INSERT INTO users (username, password) VALUES ('user1', 'password1')")
@@ -38,28 +37,23 @@ def init_db():
 def get_db_connection():
     return sqlite3.connect('vulnnote.db')
 
-# SECURITY FLAW 7: SQL Injection vulnerable function
 def search_notes(user_id, search_term):
-    """Search notes for a user - VULNERABLE TO SQL INJECTION"""
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    # VULNERABLE: Direct string concatenation
     query = f"SELECT * FROM notes WHERE user_id = {user_id} AND content LIKE '%{search_term}%'"
     
-    print(f"[DEBUG] Executing query: {query}")  # SECURITY FLAW 8: Information disclosure
+    print(f"Executing query: {query}")
     
-    cursor.execute(query)  # SQL Injection point
+    cursor.execute(query)
     results = cursor.fetchall()
     conn.close()
     return results
 
-# SECURITY FLAW 9: IDOR vulnerability (no authorization check)
 def get_note_by_id(note_id):
-    """Get any note by ID without checking ownership"""
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM notes WHERE id = ?", (note_id,))
     note = cursor.fetchone()
     conn.close()
-    return note  # Returns any note, regardless of user
+    return note
