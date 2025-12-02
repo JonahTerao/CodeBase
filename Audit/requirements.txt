@@ -1,0 +1,3 @@
+Flask==2.1.0  # Deliberately outdated version
+sqlite3
+werkzeug==2.1.0  # Outdated with known vulnerabilities
