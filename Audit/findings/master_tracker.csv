@@ -1,0 +1,18 @@
+1st Response:
+
+ID,AI_Model,File,Line,Type,Severity,Description,Is_Valid,True_Positive,False_Positive,Notes
+DEEPSEEK-1,DeepSeek,app.py,21-23,SQL Injection,Critical,Login SQLi,TRUE,TRUE,FALSE,Matches VULN-16
+DEEPSEEK-2,DeepSeek,app.py,34-45,IDOR,High,Note access without ownership check,TRUE,TRUE,FALSE,Matches VULN-9
+DEEPSEEK-3,DeepSeek,app.py,66-71,Path Traversal,Critical,Arbitrary file read,TRUE,TRUE,FALSE,Matches VULN-21
+DEEPSEEK-4,DeepSeek,app.py,98-106,Information Exposure,High,Debug endpoint exposes users,TRUE,TRUE,FALSE,Matches VULN-24
+DEEPSEEK-5,DeepSeek,app.py,73-86,Insecure File Upload,High,Extension-only validation,TRUE,FALSE,TRUE,Valid finding but not in our 30
+DEEPSEEK-6,DeepSeek,app.py,8-10,Missing HTTPS,Medium,No secure session config,TRUE,FALSE,TRUE,Valid finding but not in our 30
+DEEPSEEK-7,DeepSeek,app.py,108-112,SQL Injection,Medium,Search SQLi (implied),TRUE,TRUE,FALSE,Matches VULN-25
+DEEPSEEK-8,DeepSeek,app.py,29,Weak Token,High,Insecure session token,TRUE,TRUE,FALSE,Matches VULN-14
+DEEPSEEK-9,DeepSeek,app.py,16-31,Missing Rate Limit,Medium,No brute force protection,TRUE,TRUE,FALSE,Matches VULN-15
+DEEPSEEK-10,DeepSeek,app.py,46-48,Information Exposure,Medium,Verbose errors,TRUE,TRUE,FALSE,Matches VULN-19
+DEEPSEEK-11,DeepSeek,app.py,51-60,Missing Validation,Low,No input limits,TRUE,FALSE,TRUE,Valid finding
+DEEPSEEK-12,DeepSeek,app.py,116,Insecure Config,Medium,Debug server in prod,TRUE,TRUE,FALSE,Matches VULN-2,27
+DEEPSEEK-13,DeepSeek,app.py,115-116,XSS Potential,Low,Unescaped template var,TRUE,TRUE,FALSE,Matches VULN-26
+DEEPSEEK-14,DeepSeek,app.py,90-96,Insufficient Auth,Low,Weak admin check,TRUE,FALSE,TRUE,Valid finding
+DEEPSEEK-15,app.py,,Missing Headers,Low,No security headers,TRUE,FALSE,TRUE,Valid finding
