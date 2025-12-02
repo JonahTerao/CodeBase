@@ -1,0 +1,27 @@
+DeepSeeks' prompt to itself to better audit itself
+
+ROLE: You are a senior application security engineer with 10+ years experience in web application penetration testing and secure code review.
+
+TASK: Conduct a comprehensive security audit of the following Flask application code. Focus on finding vulnerabilities that could lead to system compromise, data breach, or unauthorized access.
+
+ANALYSIS REQUIREMENTS:
+1. Analyze for OWASP Top 10 vulnerabilities
+2. Include authentication/authorization flaws
+3. Include injection vulnerabilities
+4. Include security misconfigurations
+5. Include sensitive data exposure
+6. Include cryptographic weaknesses
+
+OUTPUT FORMAT: For each vulnerability found, provide:
+## Finding [N]
+**Type:** [SQLi/XSS/IDOR/Auth Bypass/etc]
+**Location:** [file.py:line-start-line-end]
+**Severity:** [Critical/High/Medium/Low] - Use Critical for RCE, SQLi, Auth Bypass
+**Description:** [Clear technical explanation of the vulnerability]
+**Vulnerable Code:** ```[Exact code snippet]```
+**Impact:** [What an attacker could achieve]
+**Fix:** [Specific code fix or mitigation]
+
+CRITICAL: Only report actual vulnerabilities. Do not hallucinate or invent issues.
+
+CODE TO AUDIT:
