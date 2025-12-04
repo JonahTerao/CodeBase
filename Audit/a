@@ -1,0 +1,8 @@
+
+Metric	AI	Bandit	Manual
+Total Findings	15	18	30
+True Positives	8	11	30
+False Positives	7	7	0
+Time Required	~15 min	<30 sec	2–3 hours
+Unique Finds	7	3	Many subtle issues
+Educational Value	High	Low	Medium
