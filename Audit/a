@@ -1,8 +1,13 @@
 
-Metric	AI	Bandit	Manual
-Total Findings	15	18	30
-True Positives	8	11	30
-False Positives	7	7	0
-Time Required	~15 min	<30 sec	2–3 hours
-Unique Finds	7	3	Many subtle issues
-Educational Value	High	Low	Medium
+Metric	AI (DeepSeek)	Bandit (Control)	Analysis
+Total Findings	15 findings	18 findings	Bandit found 20% more total issues
+True Positives	8 matched our vulnerabilities	11 matched our vulnerabilities	Bandit had 38% better accuracy
+False Positives	7 incorrect findings	7 incorrect findings	Equal false positive rates
+Unique Finds	7 vulnerabilities Bandit missed	3 vulnerabilities AI missed	AI found 133% more unique issues
+Shared Findings	8 vulnerabilities both found	8 vulnerabilities both found	Strong overlap on obvious patterns
+False Negatives	22 total missed vulns	19 total missed vulns	Bandit slightly better (14% fewer misses)
+Business Logic Finds	5 architectural/flow issues	0 business logic issues	AI exclusive strength area
+Pattern Recognition	9 code pattern finds	16 code pattern finds	Bandit excels at pattern matching
+Analysis Time	~15 minutes	<30 seconds	Bandit is 30x faster
+Educational Value	High (explanations, patches)	Low (just findings)	AI provides learning context
+
